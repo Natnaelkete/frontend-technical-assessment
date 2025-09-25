@@ -8,38 +8,24 @@
   </head>
   <body>
     <header>
-      <!-- Implement navigation here -->
+      <nav class="nav">
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-list"
+        >
+          <span class="hamburger"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#nav-section" class="nav-link">Navigation</a></li>
+          <li><a href="#drag-section" class="nav-link">Drag & Drop</a></li>
+          <li><a href="#list-section" class="nav-link">Blog List</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-      <section id="list-section" class="content-section">
-        <h2>Blog List Demo</h2>
-        <div class="blog-list-container">
-          <div class="blog-controls">
-            <select class="sort-select">
-              <option value="">Sort by...</option>
-              <option value="date">Date</option>
-              <option value="reading_time">Reading Time</option>
-              <option value="category">Category</option>
-            </select>
-            <select class="filter-select">
-              <option value="">Filter by...</option>
-              <option value="Gadgets">Gadgets</option>
-              <option value="Startups">Startups</option>
-              <option value="Writing">Writing</option>
-            </select>
-            <input
-              type="search"
-              class="search-input"
-              placeholder="Search blogs..."
-            />
-          </div>
-          <div class="loading-indicator hidden">Loading blogs...</div>
-          <div class="error-container hidden"></div>
-          <div class="blog-list-content">
-            <!-- Blogs will be rendered here -->
-          </div>
-        </div>
-      </section>
+      <!-- Implement your solution here -->
     </main>
     <script type="module" src="src/js/main.js"></script>
   </body>
