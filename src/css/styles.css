@@ -46,127 +46,73 @@ main {
   background-color: var(--bg);
 }
 
-.content-section {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.6),
-    rgba(255, 255, 255, 0.9)
-  );
-  padding: 20px;
+/* Navigation */
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-bottom: 20px;
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(16, 24, 40, 0.04);
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.content-section h2 {
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: #0b2545;
-}
-
-#drag-section,
-#list-section {
-  width: 600px;
-}
-
-/* Drag & Drop container */
-.drag-drop-container {
+.nav-list {
   display: flex;
-  width: 500px;
+  list-style: none;
   gap: 20px;
-  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
-.draggable-list {
-  min-height: 140px;
-  background: linear-gradient(180deg, #ffffff, #fbfdff);
-  border-radius: 12px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(16, 24, 40, 0.04);
-}
-
-.draggable-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  background: var(--card);
-  padding: 10px 12px;
-  border-radius: 10px;
-  cursor: grab;
-  user-select: none;
-  transition: transform 160ms cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 160ms,
-    opacity 160ms;
-  box-shadow: 0 4px 8px rgba(6, 8, 20, 0.04);
-  border: 1px solid rgba(16, 24, 40, 0.03);
-}
-
-.draggable-item:active {
-  cursor: grabbing;
-}
-
-.draggable-item .item-content {
+.nav-link {
+  text-decoration: none;
+  color: #0f172a;
   font-weight: 600;
-  color: #0b2545;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.draggable-item .drag-handle {
-  font-size: 18px;
-  opacity: 0.6;
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
+  background: #0ea5e9;
+  color: #fff;
+  outline: none;
 }
 
-.draggable-item.dragging {
-  transform: scale(1.02);
-  box-shadow: 0 12px 30px rgba(6, 8, 20, 0.12);
-  opacity: 0.98;
-  z-index: 9999;
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+  width: 24px;
+  height: 2px;
+  background: #0f172a;
   position: relative;
 }
 
-/* Drop zones */
-.drop-zones {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: #0f172a;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
 }
 
-.drop-zone {
-  width: 320px;
-  height: 140px;
-  border-radius: 12px;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, #f7fbff, #ffffff);
-  border: 2px dashed rgba(37, 99, 235, 0.12);
-  transition: background-color 140ms, transform 140ms, border-color 140ms;
-  box-shadow: 0 4px 10px rgba(16, 24, 40, 0.03);
-  overflow: auto;
+.nav-toggle .hamburger::before {
+  top: -6px;
 }
 
-.drop-zone .drop-zone-label {
-  pointer-events: none;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.drop-zone.dragover {
-  background: linear-gradient(
-    90deg,
-    rgba(14, 165, 233, 0.06),
-    rgba(37, 99, 235, 0.04)
-  );
-  border-color: rgba(37, 99, 235, 0.5);
-  transform: translateY(-4px);
+.nav-toggle .hamburger::after {
+  top: 6px;
 }
