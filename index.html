@@ -8,9 +8,51 @@
   </head>
   <body>
     <header>
-      <!-- Implement navigation here -->
+      <nav class="nav">
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-list"
+        >
+          <span class="hamburger"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#nav-section" class="nav-link">Navigation</a></li>
+          <li><a href="#drag-section" class="nav-link">Drag & Drop</a></li>
+          <li><a href="#list-section" class="nav-link">Blog List</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
+      <section id="drag-section" class="content-section">
+        <h2>Drag & Drop Demo</h2>
+        <div class="drag-drop-container">
+          <div class="draggable-list">
+            <div class="draggable-item" draggable="true">
+              <div class="item-content">Item 1</div>
+              <span class="drag-handle">⋮</span>
+            </div>
+            <div class="draggable-item" draggable="true">
+              <div class="item-content">Item 2</div>
+              <span class="drag-handle">⋮</span>
+            </div>
+            <div class="draggable-item" draggable="true">
+              <div class="item-content">Item 3</div>
+              <span class="drag-handle">⋮</span>
+            </div>
+          </div>
+          <div class="drop-zones">
+            <div class="drop-zone">
+              <div class="drop-zone-label">Drop Here</div>
+            </div>
+            <div class="drop-zone">
+              <div class="drop-zone-label">Drop Here</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="list-section" class="content-section">
         <h2>Blog List Demo</h2>
         <div class="blog-list-container">
